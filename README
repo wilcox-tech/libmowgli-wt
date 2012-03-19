@@ -1,3 +1,21 @@
+This is a patched version of libmowgli for use with the eScape library
+from Wilcox Technologies.
+
+We attempted to have our patches merged upstream, but they declined to
+accept them.  Therefore, we are maintaining our own fork of libmowgli
+that supports SunOS, Mac OS 9, Win32, and thread safety.
+
+This is not libmowgli-2, which has fundamental architecture changes and
+is not compatible with SunOS or Mac OS 9.  libmowgli-2 does integrate
+a limited subset of the patches applied here for Win32 and thread
+safety but is not as portable as the original version of libmowgli and
+therefore is unsuitable for use with eScape without major changes to
+both the build system of eScape and the architecture of libmowgli-2.
+
+
+Below is the original README file from libmowgli.
+
+
 libmowgli - A useful collection of routines for programming
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
