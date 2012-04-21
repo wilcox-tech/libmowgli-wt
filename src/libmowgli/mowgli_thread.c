@@ -152,7 +152,11 @@ int mowgli_mutex_destroy(mowgli_mutex_t *mutex)
 void mowgli_thread_init(void)
 {
 	pthread_mutexattr_init(&attr);
+#ifndef PTHREAD_MUTEX_RECURSIVE
+	pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_DEFAULT);
+#else
 	pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
+#endif
 }
 
 
