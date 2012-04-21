@@ -95,10 +95,10 @@ mowgli_heap_expand(mowgli_heap_t *bh)
 	char *offset;
 	unsigned int a;
 	
+	size_t blp_size = sizeof(mowgli_block_t) + (bh->alloc_size * bh->mowgli_heap_elems);
+
 	if(mowgli_mutex_lock(&(bh->mutex)) != 0)
 		mowgli_throw_exception_fatal("heap mutex can't be locked");
-
-	size_t blp_size = sizeof(mowgli_block_t) + (bh->alloc_size * bh->mowgli_heap_elems);
 
 	if(bh->empty_block != NULL)
 	{
