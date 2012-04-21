@@ -40,15 +40,21 @@
 # include <netdb.h>
 # include <netinet/in.h>
 # include <unistd.h>
-# include <grp.h>
 # include <sys/time.h>
-# include <sys/wait.h>
-# include <sys/resource.h>
 # include <sys/socket.h>
 # include <fcntl.h>
 # include <arpa/inet.h>
-# include <libgen.h>
 # include <dirent.h>
+# ifndef __MWERKS__
+#  include <grp.h>
+#  include <sys/wait.h>
+#  include <sys/resource.h>
+#  include <libgen.h>
+# else
+#  include <extras.h>
+#  include <utime.h>
+#  define strdup _strdup
+# endif
 #else
 # include <windows.h>
 # include <winsock.h>
