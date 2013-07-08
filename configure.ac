@@ -42,6 +42,8 @@ AC_FUNC_STAT
 
 AC_CHECK_LIB(dl, dlopen, [LIBS="$LIBS -ldl"])
 
+AC_SEARCH_LIBS(pthread_mutex_init, pthread)
+
 dnl Detect which loader to use
 AC_MSG_CHECKING(loader type)
 case "$target" in
